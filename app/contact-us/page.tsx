@@ -1,134 +1,240 @@
-import { MapPin, Mail, Phone, MessageSquare } from 'lucide-react';
+import { MapPin, Mail, Facebook, Instagram } from 'lucide-react';
 import PageHeader from '@/components/ui/PageHeader';
+import { WhatsAppIcon, FiverrIcon, UpworkIcon, LinkedInIcon } from '@/components/ui/SocialIcons';
 import type { Metadata } from 'next';
 
 export const metadata: Metadata = {
-  title: 'Contact Us | Rank Link Agency',
+  title: 'Contact Us',
   description: 'Get in touch with Rank Link Agency for premium guest post and backlink services.',
 };
 
+const SOCIAL_LINKS = [
+  {
+    label: "Facebook",
+    href: "https://www.facebook.com/profile.php?id=100085432185763&mibextid=ZbWKwL",
+    icon: Facebook,
+    bg: "bg-blue-600",
+    desc: "Follow us on Facebook",
+  },
+  {
+    label: "Instagram",
+    href: "https://www.instagram.com/linkfuel_agency?igsh=YXh4aWd6MzNwMnM0",
+    icon: Instagram,
+    bg: "bg-gradient-to-br from-pink-500 via-red-500 to-yellow-500",
+    desc: "@linkfuel_agency",
+  },
+  {
+    label: "LinkedIn",
+    href: "https://www.linkedin.com/in/hafiz-mueen-8a4819296?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app",
+    icon: LinkedInIcon,
+    bg: "bg-blue-700",
+    desc: "Hafiz Mueen",
+  },
+  {
+    label: "WhatsApp",
+    href: "https://wa.me/923157588685",
+    icon: WhatsAppIcon,
+    bg: "bg-green-500",
+    desc: "+92 315 7588685",
+  },
+  {
+    label: "Fiverr",
+    href: "https://www.fiverr.com/s/akNP2eK",
+    icon: FiverrIcon,
+    bg: "bg-[#1DBF73]",
+    desc: "Hire us on Fiverr",
+  },
+  {
+    // UPWORK_LINK_PLACEHOLDER — replace href below with your Upwork profile URL
+    label: "Upwork",
+    href: "#",
+    icon: UpworkIcon,
+    bg: "bg-[#6FDA44]",
+    desc: "Coming soon",
+  },
+];
+
 export default function ContactPage() {
   return (
-    <div className="bg-[#FAFEFA] min-h-screen pb-44">
+    <div className="bg-[#FAFEFA] min-h-screen pb-24">
       <PageHeader title="Contact Us" subtitle="We would love to hear from you." />
 
-      <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 mt-12 relative z-20">
-        <div className="bg-white rounded-3xl shadow-xl overflow-hidden flex flex-col lg:flex-row border border-gray-100">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 mt-12 relative z-20">
+
+        {/* Main contact card */}
+        <div className="bg-white rounded-3xl shadow-xl overflow-hidden flex flex-col lg:flex-row border border-gray-100 mb-12">
+
+          {/* Left panel */}
           <div className="w-full lg:w-5/12 bg-[#2D2B4A] p-10 lg:p-12 text-white relative overflow-hidden">
-            <div className="absolute top-0 right-0 w-64 h-64 bg-[#00BCD4] rounded-full mix-blend-multiply filter blur-3xl opacity-20 -translate-y-1/2 translate-x-1/2 animate-pulse"></div>
-            <h3 className="text-[#00BCD4] font-bold uppercase tracking-widest text-sm mb-4">
+            <div className="absolute top-0 right-0 w-64 h-64 bg-[#00BCD4] rounded-full mix-blend-multiply filter blur-3xl opacity-20 -translate-y-1/2 translate-x-1/2 animate-pulse pointer-events-none" />
+            <h3 className="text-[#00BCD4] font-bold uppercase tracking-widest text-xs mb-3">
               GET IN TOUCH
             </h3>
-            <h2 className="text-3xl font-bold mb-8 leading-tight">
+            <h2 className="text-2xl font-bold mb-8 leading-tight">
               Don&apos;t hesitate to contact us for more information.
             </h2>
-            <div className="space-y-8">
-              {[
-                { icon: MapPin, title: 'Head Office', desc: 'Chnadar Nagar chak no 2, district Nankana sahib' },
-                { icon: Mail, title: 'Email Us', desc: 'admin@ranklinkagency.com' },
-                { icon: Phone, title: 'Call us', desc: '+92 321 7765490' },
-                { icon: MessageSquare, title: 'Skype', desc: 'live:.cid.a413a776fa56584b' },
-              ].map((item, idx) => (
-                <div key={idx} className="flex items-start gap-4 group">
-                  <div className="w-12 h-12 bg-[#00BCD4] rounded-lg flex items-center justify-center flex-shrink-0 shadow-lg transform transition-transform group-hover:scale-110 group-hover:rotate-3">
-                    <item.icon className="w-6 h-6 text-white" />
-                  </div>
-                  <div>
-                    <h4 className="font-bold text-lg group-hover:text-[#00BCD4] transition-colors">
-                      {item.title}
-                    </h4>
-                    <p className="text-gray-300 text-sm mt-1 leading-relaxed">{item.desc}</p>
-                  </div>
+            <div className="space-y-6">
+              <div className="flex items-start gap-4 group">
+                <div className="w-11 h-11 bg-[#00BCD4] rounded-xl flex items-center justify-center flex-shrink-0 shadow-lg transition-transform group-hover:scale-110">
+                  <MapPin className="w-5 h-5 text-white" />
                 </div>
-              ))}
+                <div>
+                  <h4 className="font-bold group-hover:text-[#00BCD4] transition-colors">Head Office</h4>
+                  <p className="text-gray-300 text-sm mt-0.5">Chnadar Nagar chak no 2, district Nankana sahib</p>
+                </div>
+              </div>
+              <div className="flex items-start gap-4 group">
+                <div className="w-11 h-11 bg-[#00BCD4] rounded-xl flex items-center justify-center flex-shrink-0 shadow-lg transition-transform group-hover:scale-110">
+                  <Mail className="w-5 h-5 text-white" />
+                </div>
+                <div>
+                  <h4 className="font-bold group-hover:text-[#00BCD4] transition-colors">Email Us</h4>
+                  <a href="mailto:admin@ranklinkagency.com" className="text-gray-300 text-sm mt-0.5 hover:text-[#00BCD4] transition-colors break-all">
+                    admin@ranklinkagency.com
+                  </a>
+                </div>
+              </div>
+              <div className="flex items-start gap-4 group">
+                <div className="w-11 h-11 bg-green-500 rounded-xl flex items-center justify-center flex-shrink-0 shadow-lg transition-transform group-hover:scale-110">
+                  <WhatsAppIcon className="w-5 h-5 text-white" />
+                </div>
+                <div>
+                  <h4 className="font-bold group-hover:text-green-400 transition-colors">WhatsApp</h4>
+                  <a href="https://wa.me/923157588685" target="_blank" rel="noopener noreferrer" className="text-gray-300 text-sm mt-0.5 hover:text-green-400 transition-colors">
+                    +92 315 7588685
+                  </a>
+                </div>
+              </div>
+            </div>
+
+            {/* Social links inside panel */}
+            <div className="mt-10 pt-8 border-t border-white/10">
+              <p className="text-xs font-bold text-gray-400 uppercase tracking-widest mb-4">Find us on</p>
+              <div className="flex flex-wrap gap-3">
+                {SOCIAL_LINKS.map(({ label, href, icon: Icon, bg }) => (
+                  <a
+                    key={label}
+                    href={href}
+                    target={href !== "#" ? "_blank" : undefined}
+                    rel={href !== "#" ? "noopener noreferrer" : undefined}
+                    aria-label={label}
+                    title={label}
+                    className={`w-9 h-9 ${bg} rounded-lg flex items-center justify-center text-white shadow-md hover:shadow-lg hover:-translate-y-1 transition-all duration-300`}
+                  >
+                    <Icon className="w-4 h-4" />
+                  </a>
+                ))}
+              </div>
             </div>
           </div>
 
+          {/* Right: Form */}
           <div className="w-full lg:w-7/12 p-10 lg:p-12 bg-white">
-            <h2 className="text-3xl font-bold text-slate-800 mb-2">Send us a message</h2>
-            <p className="text-gray-500 mb-8">Please fill out the form below and we will get back to you.</p>
-            <form className="space-y-6">
-              <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+            <h2 className="text-2xl font-bold text-slate-800 mb-1">Send us a message</h2>
+            <p className="text-gray-500 text-sm mb-8">Fill out the form below and we will get back to you shortly.</p>
+            <form className="space-y-5">
+              <div className="grid grid-cols-1 md:grid-cols-2 gap-5">
                 <div>
-                  <label className="block text-sm font-bold text-slate-700 mb-2">
+                  <label className="block text-xs font-bold text-slate-700 mb-1.5 uppercase tracking-wide">
                     Name <span className="text-red-500">*</span>
                   </label>
                   <input
                     type="text"
                     placeholder="Your Name"
-                    className="w-full px-4 py-3 rounded-lg bg-gray-50 border border-gray-200 focus:border-[#00BCD4] focus:ring-4 focus:ring-cyan-100/50 outline-none transition-all"
+                    className="w-full px-4 py-3 rounded-lg bg-gray-50 border border-gray-200 focus:border-[#00BCD4] focus:ring-4 focus:ring-cyan-100/50 outline-none transition-all text-sm"
                   />
                 </div>
                 <div>
-                  <label className="block text-sm font-bold text-slate-700 mb-2">Company</label>
+                  <label className="block text-xs font-bold text-slate-700 mb-1.5 uppercase tracking-wide">Company</label>
                   <input
                     type="text"
                     placeholder="Company Name"
-                    className="w-full px-4 py-3 rounded-lg bg-gray-50 border border-gray-200 focus:border-[#00BCD4] focus:ring-4 focus:ring-cyan-100/50 outline-none transition-all"
+                    className="w-full px-4 py-3 rounded-lg bg-gray-50 border border-gray-200 focus:border-[#00BCD4] focus:ring-4 focus:ring-cyan-100/50 outline-none transition-all text-sm"
                   />
                 </div>
               </div>
-              <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+              <div className="grid grid-cols-1 md:grid-cols-2 gap-5">
                 <div>
-                  <label className="block text-sm font-bold text-slate-700 mb-2">Phone</label>
+                  <label className="block text-xs font-bold text-slate-700 mb-1.5 uppercase tracking-wide">Phone</label>
                   <input
                     type="text"
                     placeholder="Phone Number"
-                    className="w-full px-4 py-3 rounded-lg bg-gray-50 border border-gray-200 focus:border-[#00BCD4] focus:ring-4 focus:ring-cyan-100/50 outline-none transition-all"
+                    className="w-full px-4 py-3 rounded-lg bg-gray-50 border border-gray-200 focus:border-[#00BCD4] focus:ring-4 focus:ring-cyan-100/50 outline-none transition-all text-sm"
                   />
                 </div>
                 <div>
-                  <label className="block text-sm font-bold text-slate-700 mb-2">
+                  <label className="block text-xs font-bold text-slate-700 mb-1.5 uppercase tracking-wide">
                     Email <span className="text-red-500">*</span>
                   </label>
                   <input
                     type="email"
                     placeholder="Email Address"
-                    className="w-full px-4 py-3 rounded-lg bg-gray-50 border border-gray-200 focus:border-[#00BCD4] focus:ring-4 focus:ring-cyan-100/50 outline-none transition-all"
+                    className="w-full px-4 py-3 rounded-lg bg-gray-50 border border-gray-200 focus:border-[#00BCD4] focus:ring-4 focus:ring-cyan-100/50 outline-none transition-all text-sm"
                   />
                 </div>
               </div>
               <div>
-                <label className="block text-sm font-bold text-slate-700 mb-2">Subject</label>
+                <label className="block text-xs font-bold text-slate-700 mb-1.5 uppercase tracking-wide">Subject</label>
                 <input
                   type="text"
                   placeholder="How can we help?"
-                  className="w-full px-4 py-3 rounded-lg bg-gray-50 border border-gray-200 focus:border-[#00BCD4] focus:ring-4 focus:ring-cyan-100/50 outline-none transition-all"
+                  className="w-full px-4 py-3 rounded-lg bg-gray-50 border border-gray-200 focus:border-[#00BCD4] focus:ring-4 focus:ring-cyan-100/50 outline-none transition-all text-sm"
                 />
               </div>
               <div>
-                <label className="block text-sm font-bold text-slate-700 mb-2">
+                <label className="block text-xs font-bold text-slate-700 mb-1.5 uppercase tracking-wide">
                   Message <span className="text-red-500">*</span>
                 </label>
                 <textarea
                   rows={4}
                   placeholder="Write your message here..."
-                  className="w-full px-4 py-3 rounded-lg bg-gray-50 border border-gray-200 focus:border-[#00BCD4] focus:ring-4 focus:ring-cyan-100/50 outline-none transition-all resize-none"
-                ></textarea>
+                  className="w-full px-4 py-3 rounded-lg bg-gray-50 border border-gray-200 focus:border-[#00BCD4] focus:ring-4 focus:ring-cyan-100/50 outline-none transition-all resize-none text-sm"
+                />
               </div>
               <button
                 type="submit"
-                className="w-full bg-[#FFC107] hover:bg-yellow-500 text-white font-bold py-4 rounded-lg shadow-lg hover:shadow-xl transition-all transform hover:-translate-y-1 active:scale-95 uppercase tracking-wider"
+                className="w-full bg-[#FFC107] hover:bg-yellow-500 text-white font-bold py-4 rounded-lg shadow-lg hover:shadow-xl transition-all transform hover:-translate-y-0.5 active:scale-95 uppercase tracking-wider text-sm"
               >
                 Send Message
               </button>
             </form>
           </div>
         </div>
-      </div>
 
-      <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 mt-20">
-        <div className="bg-white p-2 rounded-2xl shadow-lg border border-gray-100">
+        {/* Social platforms row */}
+        <div className="bg-white rounded-2xl shadow-sm border border-gray-100 p-8 mb-12">
+          <p className="text-center text-xs font-bold text-gray-400 uppercase tracking-widest mb-6">Connect with us</p>
+          <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-6 gap-4">
+            {SOCIAL_LINKS.map(({ label, href, icon: Icon, bg, desc }) => (
+              <a
+                key={label}
+                href={href}
+                target={href !== "#" ? "_blank" : undefined}
+                rel={href !== "#" ? "noopener noreferrer" : undefined}
+                className="flex flex-col items-center gap-2 p-4 rounded-xl hover:bg-gray-50 transition-all group"
+              >
+                <div className={`w-12 h-12 ${bg} rounded-xl flex items-center justify-center text-white shadow-md group-hover:shadow-lg group-hover:-translate-y-1 transition-all duration-300`}>
+                  <Icon className="w-6 h-6" />
+                </div>
+                <span className="text-xs font-bold text-slate-700">{label}</span>
+                <span className="text-xs text-gray-400 text-center leading-tight">{desc}</span>
+              </a>
+            ))}
+          </div>
+        </div>
+
+        {/* Map */}
+        <div className="bg-white p-2 rounded-2xl shadow-sm border border-gray-100">
           <iframe
             src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d54752.61864147748!2d73.61902804863281!3d30.165261399999995!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x391807d9280d531b%3A0x7d066c1901c51883!2sMinchinabad%2C%20Bahawalnagar%2C%20Punjab%2C%20Pakistan!5e0!3m2!1sen!2s!4v1709664000000!5m2!1sen!2s"
             width="100%"
-            height="450"
-            style={{ border: 0, borderRadius: '16px' }}
+            height="420"
+            style={{ border: 0, borderRadius: '14px' }}
             allowFullScreen
             loading="lazy"
             referrerPolicy="no-referrer-when-downgrade"
             title="Office Location"
-          ></iframe>
+          />
         </div>
       </div>
     </div>
