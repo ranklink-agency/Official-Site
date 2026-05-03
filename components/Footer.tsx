@@ -36,8 +36,7 @@ const SOCIAL_LINKS = [
   },
   {
     label: "Upwork",
-    // UPWORK_LINK_PLACEHOLDER — replace the href below with your Upwork profile URL when ready
-    href: "#",
+    href: "https://www.upwork.com/freelancers/~01638af1e4b87142f3?mp_source=share",
     icon: UpworkIcon,
     color: "hover:bg-[#6FDA44] hover:text-white text-[#6FDA44]",
   },
@@ -200,9 +199,10 @@ export default function Footer() {
                   <FiverrIcon className="w-4 h-4" />
                   Fiverr
                 </a>
-                {/* UPWORK_LINK_PLACEHOLDER — replace href below with your Upwork profile URL */}
                 <a
-                  href="#"
+                  href="https://www.upwork.com/freelancers/~01638af1e4b87142f3?mp_source=share"
+                  target="_blank"
+                  rel="noopener noreferrer"
                   className="inline-flex items-center gap-2 px-4 py-2 bg-white border border-gray-200 rounded-lg text-sm font-bold text-[#6FDA44] hover:bg-[#6FDA44] hover:text-white hover:border-[#6FDA44] transition-all duration-300 shadow-sm hover:shadow-md"
                 >
                   <UpworkIcon className="w-4 h-4" />

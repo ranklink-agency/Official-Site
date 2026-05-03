@@ -5,7 +5,7 @@ import { Mail, X, MessageCircle } from 'lucide-react';
 
 export default function FloatingChat() {
   const [isOpen, setIsOpen] = useState(false);
-  const whatsappUrl = 'https://wa.me/923044500281';
+  const whatsappUrl = 'https://wa.me/923157588685';
   const emailUrl = 'mailto:admin@ranklinkagency.com';
 
   return (

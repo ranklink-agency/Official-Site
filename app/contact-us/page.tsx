@@ -45,9 +45,8 @@ const SOCIAL_LINKS = [
     desc: "Hire us on Fiverr",
   },
   {
-    // UPWORK_LINK_PLACEHOLDER — replace href below with your Upwork profile URL
     label: "Upwork",
-    href: "#",
+    href: "https://www.upwork.com/freelancers/~01638af1e4b87142f3?mp_source=share",
     icon: UpworkIcon,
     bg: "bg-[#6FDA44]",
     desc: "Coming soon",
