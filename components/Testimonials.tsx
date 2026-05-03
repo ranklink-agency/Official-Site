@@ -40,11 +40,11 @@ export default function Testimonials() {
             </div>
           </div>
 
-          <div className="w-full md:w-1/2 relative flex justify-center">
+          <div className="w-full md:w-1/2 relative flex justify-center overflow-hidden">
             <svg
               viewBox="0 0 200 200"
               xmlns="http://www.w3.org/2000/svg"
-              className="absolute w-[120%] h-[120%] text-brand-yellow fill-current opacity-90 z-0 top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2"
+              className="absolute w-full h-full text-brand-yellow fill-current opacity-90 z-0 top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2"
             >
               <path
                 d="M44.7,-76.4C58.9,-69.2,71.8,-59.1,79.6,-46.9C87.4,-34.7,90.1,-20.4,87.9,-6.6C85.7,7.2,78.6,20.5,70,32.3C61.4,44.1,51.3,54.4,39.6,62.8C27.9,71.2,14.6,77.7,0.5,76.8C-13.6,75.9,-27.2,67.6,-39.9,59.3C-52.6,51,-64.4,42.7,-73.1,31.7C-81.8,20.7,-87.4,7,-85.4,-5.8C-83.4,-18.6,-73.8,-30.5,-63.4,-40.4C-53,-50.3,-41.8,-58.2,-29.9,-66.9C-18,-75.6,-5.4,-85.1,6,-95.5L17.4,-105.9"

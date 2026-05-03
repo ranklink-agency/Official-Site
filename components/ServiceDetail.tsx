@@ -44,14 +44,14 @@ export default function ServiceDetail() {
             </div>
           </div>
 
-          <div className="w-full lg:w-1/2 relative flex justify-center">
-            <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-[400px] h-[400px] bg-brand-yellow rounded-full z-0"></div>
+          <div className="w-full lg:w-1/2 relative flex justify-center overflow-hidden">
+            <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-64 h-64 sm:w-80 sm:h-80 lg:w-[400px] lg:h-[400px] bg-brand-yellow rounded-full z-0"></div>
             <Image
               src="https://images.unsplash.com/photo-1600880292203-757bb62b4baf?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80"
               alt="Business discussion"
               width={400}
               height={400}
-              className="relative z-10 rounded-full w-[400px] h-[400px] object-cover border-8 border-white shadow-2xl"
+              className="relative z-10 rounded-full w-64 h-64 sm:w-80 sm:h-80 lg:w-[400px] lg:h-[400px] object-cover border-8 border-white shadow-2xl"
             />
           </div>
         </div>

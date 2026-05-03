@@ -29,12 +29,12 @@ export default function Navbar() {
               className="transition-transform duration-300 group-hover:scale-110 object-contain"
               priority
             />
-            <span className="font-bold text-2xl text-slate-800 transition-colors">
+            <span className="font-bold text-lg lg:text-2xl text-slate-800 transition-colors">
               Rank Link Agency
             </span>
           </Link>
 
-          <div className="hidden md:flex items-center space-x-8">
+          <div className="hidden lg:flex items-center space-x-6 xl:space-x-8">
             {NAV_LINKS.map((link) => {
               const hasChildren = link.children && link.children.length > 0;
               const isActive =
@@ -83,7 +83,7 @@ export default function Navbar() {
             })}
           </div>
 
-          <div className="md:hidden flex items-center">
+          <div className="lg:hidden flex items-center">
             <button
               onClick={() => setIsOpen(!isOpen)}
               className="text-gray-600 hover:text-gray-900 focus:outline-none transform active:scale-90 transition-transform"
@@ -96,7 +96,7 @@ export default function Navbar() {
       </div>
 
       {isOpen && (
-        <div className="md:hidden bg-white border-t overflow-y-auto max-h-[80vh] animate-fade-in-up">
+        <div className="lg:hidden bg-white border-t overflow-y-auto max-h-[80vh] animate-fade-in-up">
           <div className="px-2 pt-2 pb-3 space-y-1 sm:px-3">
             {NAV_LINKS.map((link) => {
               const hasChildren = link.children && link.children.length > 0;
