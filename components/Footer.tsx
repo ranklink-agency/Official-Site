@@ -94,7 +94,7 @@ export default function Footer() {
                   title={label}
                   className={`p-2.5 bg-white rounded-full shadow-sm hover:shadow-md hover:-translate-y-1 transition-all duration-300 ${color}`}
                 >
-                  <Icon className="w-4 h-4" />
+                  <Icon className={label === "Fiverr" ? "w-6 h-6" : "w-4 h-4"} />
                 </a>
               ))}
             </div>
