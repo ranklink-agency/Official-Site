@@ -1,3 +1,5 @@
+import Link from 'next/link';
+
 export default function Stats() {
   return (
     <div
@@ -15,12 +17,12 @@ export default function Stats() {
           Our team is ready to craft a custom guest posting or press release strategy that fits your
           unique business goals. Let&apos;s talk!
         </p>
-        <a
+        <Link
           href="/contact-us"
           className="inline-block bg-brand-yellow hover:bg-yellow-500 text-white font-bold py-3 px-8 rounded-full shadow-lg gap-2 mb-20 uppercase"
         >
           Contact Us
-        </a>
+        </Link>
 
         <div className="border-t border-white/20 pt-16">
           <h3 className="text-2xl md:text-4xl font-bold text-white mb-4">

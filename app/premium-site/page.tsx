@@ -2,6 +2,7 @@
 
 import { useState } from 'react';
 import Image from 'next/image';
+import Link from 'next/link';
 import { PREMIUM_SITES, PREMIUM_FAQS } from '@/lib/constants';
 import { ChevronRight, ShieldCheck, TrendingUp, DollarSign, Globe } from 'lucide-react';
 import SectionHeading from '@/components/ui/SectionHeading';
@@ -107,9 +108,9 @@ export default function PremiumSitesPage() {
                           ${site.price.toFixed(0)}
                         </span>
                       </div>
-                      <button className="bg-[#FFC107] hover:bg-yellow-500 text-white font-bold py-2.5 px-6 rounded-lg transition-all uppercase text-sm tracking-wider shadow-md hover:shadow-lg transform active:scale-95">
+                      <Link href="/contact-us" className="inline-block bg-[#FFC107] hover:bg-yellow-500 text-white font-bold py-2.5 px-6 rounded-lg transition-all uppercase text-sm tracking-wider shadow-md hover:shadow-lg transform active:scale-95">
                         Buy Now
-                      </button>
+                      </Link>
                     </div>
                   </div>
                 </div>

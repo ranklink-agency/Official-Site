@@ -1,4 +1,5 @@
 import { CheckSquare, Users, Globe } from 'lucide-react';
+import Link from 'next/link';
 import SectionHeading from '@/components/ui/SectionHeading';
 
 export default function WhyChooseUs() {
@@ -14,12 +15,12 @@ export default function WhyChooseUs() {
               alignment="left"
               className="mb-8"
             />
-            <a
+            <Link
               href="/why-choose-us"
               className="inline-block bg-[#FFC107] hover:bg-yellow-500 text-white font-bold py-3 px-8 rounded-md shadow-md uppercase transition-colors"
             >
               Learn More
-            </a>
+            </Link>
           </div>
 
           <div className="w-full lg:w-2/3 space-y-6">

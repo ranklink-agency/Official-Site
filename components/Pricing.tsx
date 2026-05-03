@@ -1,4 +1,5 @@
 import { CheckCircle } from 'lucide-react';
+import Link from 'next/link';
 import { PRICING_PLANS, BULK_PLANS } from '@/lib/constants';
 import SectionHeading from '@/components/ui/SectionHeading';
 
@@ -46,9 +47,9 @@ export default function Pricing() {
                 </ul>
               </div>
               <div className="p-8 pt-0">
-                <button className="w-full bg-[#FFC107] hover:bg-yellow-500 text-white font-bold py-4 px-4 rounded-lg uppercase transition-all duration-200 shadow-md tracking-wider transform active:scale-95">
+                <Link href="/contact-us" className="block w-full bg-[#FFC107] hover:bg-yellow-500 text-white font-bold py-4 px-4 rounded-lg uppercase transition-all duration-200 shadow-md tracking-wider transform active:scale-95 text-center">
                   Buy Now
-                </button>
+                </Link>
               </div>
             </div>
           ))}
@@ -75,9 +76,9 @@ export default function Pricing() {
                 </div>
               </div>
               <div className="p-8 pt-0 relative z-10">
-                <button className="w-full bg-[#FFC107] hover:bg-yellow-500 text-white font-bold py-4 px-4 rounded-lg uppercase transition-all duration-200 shadow-lg tracking-wider transform active:scale-95">
+                <Link href="/contact-us" className="block w-full bg-[#FFC107] hover:bg-yellow-500 text-white font-bold py-4 px-4 rounded-lg uppercase transition-all duration-200 shadow-lg tracking-wider transform active:scale-95 text-center">
                   Buy Now
-                </button>
+                </Link>
               </div>
             </div>
           ))}

@@ -1,4 +1,5 @@
 import { CheckCircle } from 'lucide-react';
+import Link from 'next/link';
 import { SEO_SERVICES_FEATURES, SEO_PRICING_PLANS } from '@/lib/constants';
 import SectionHeading from '@/components/ui/SectionHeading';
 import type { Metadata } from 'next';
@@ -25,12 +26,12 @@ export default function SeoServicesPage() {
               Looking forward to improving the ranking of your site? Our fully-managed SEO service
               encompasses everything you need to improve the SEO rankings of the websites.
             </p>
-            <a
+            <Link
               href="#pricing"
               className="inline-block bg-[#FFC107] hover:bg-yellow-500 text-white font-bold py-4 px-10 rounded-sm shadow-lg uppercase transition-colors tracking-wide"
             >
               Pricing Plans
-            </a>
+            </Link>
           </div>
 
           <div className="w-full lg:w-1/2 relative z-10 flex justify-center lg:justify-end">
@@ -172,9 +173,9 @@ export default function SeoServicesPage() {
                         </li>
                       ))}
                     </ul>
-                    <button className="w-full py-4 rounded-xl font-bold uppercase tracking-wider transition-all bg-[#FFC107] text-white hover:bg-yellow-500 shadow-md hover:shadow-lg">
+                    <Link href="/contact-us" className="block w-full py-4 rounded-xl font-bold uppercase tracking-wider transition-all bg-[#FFC107] text-white hover:bg-yellow-500 shadow-md hover:shadow-lg text-center">
                       Get Started
-                    </button>
+                    </Link>
                   </div>
                 </div>
               );

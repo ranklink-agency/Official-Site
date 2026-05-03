@@ -1,4 +1,5 @@
 import Image from 'next/image';
+import Link from 'next/link';
 import { Quote } from 'lucide-react';
 import { TEAM_MEMBERS } from '@/lib/constants';
 import PageHeader from '@/components/ui/PageHeader';
@@ -64,12 +65,12 @@ export default function OurTeamPage() {
               We are always looking for talented individuals who are passionate about SEO and digital
               marketing. Check out our open positions.
             </p>
-            <a
+            <Link
               href="/contact-us"
               className="inline-block bg-[#FFC107] hover:bg-yellow-500 text-white font-bold py-4 px-12 rounded-full shadow-lg uppercase transition-transform transform hover:scale-105 tracking-wider"
             >
               View Careers
-            </a>
+            </Link>
           </div>
         </div>
       </div>

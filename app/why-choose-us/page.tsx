@@ -1,4 +1,5 @@
 import { FileText, Link as LinkIcon, PhoneCall } from 'lucide-react';
+import Link from 'next/link';
 import PageHeader from '@/components/ui/PageHeader';
 import SectionHeading from '@/components/ui/SectionHeading';
 import type { Metadata } from 'next';
@@ -32,12 +33,12 @@ export default function WhyChooseUsPage() {
                 <li>We offer permanent do-follow backlinks at the best price, we accept changes and support.</li>
                 <li>We encourage free articles posted on our blog website if they attain our terms and conditions.</li>
               </ul>
-              <a
+              <Link
                 href="/contact-us"
                 className="inline-block bg-[#FFC107] hover:bg-yellow-500 text-white font-bold py-3 px-8 rounded-md shadow-md uppercase transition-colors"
               >
                 Learn More
-              </a>
+              </Link>
             </div>
             <div className="w-full lg:w-1/2 space-y-6">
               {[
@@ -84,12 +85,12 @@ export default function WhyChooseUsPage() {
                 It is not important what our value is. For us what matters the most is to give value to your business in the marketplace. With our marketing services, we help you to reach the right audience and increase your sales.
               </p>
               <div>
-                <a
+                <Link
                   href="/contact-us"
                   className="inline-block bg-[#00BCD4] hover:bg-cyan-600 text-white font-bold py-4 px-10 rounded-md shadow-md uppercase transition-colors"
                 >
                   Discover More
-                </a>
+                </Link>
               </div>
             </div>
             <div className="space-y-8 flex flex-col h-full">
