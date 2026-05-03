@@ -1,0 +1,60 @@
+You are building a professional Next.js agency website for a backlink/SEO agency.
+Do NOT deploy to Replit. The final output must be ready for deployment on Vercel via GitHub. Build, test, and verify locally, then push
+to GitHub.
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+ REFERENCE WEBSITES — Fetch these URLs for full context
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+1. Existing draft the code i upload
+
+2. DESIGN INSPIRATION (copy this look, feel, layout, and sections):
+   https://linkopify.com/
+
+3. CLIENT INFO PAGE (get name, services, branding tone from here):
+   https://sites.google.com/view/hafiz-mueen/home
+
+Fetch all three URLs and extract:
+- Sections and content structure from linkopify.com
+- Client's name, tagline, services, and bio from the Google Sites page
+- Existing code/structure from the Netlify draft
+
+
+- Framework: Next.js
+- Language: TypeScript
+- Styling: Tailwind CSS v4
+- Fonts: Load via next/font (Google Fonts or Fontshare)
+- Images: Use next/image for ALL images (built-in WebP/AVIF conversion,
+  lazy loading, and automatic compression — this reduces a 10MB image
+  to ~1-2MB automatically)
+
+
+
+
+I want to connect my github with this (config my name and email)
+
+
+
+- Match the visual style of linkopify.com closely:
+  same color palette energy, same type of layout, same professional
+  SEO-agency aesthetic
+- Clean, professional — NOT generic template-looking
+- Left-align most body content (not center-align everything)
+- No gradient buttons — use solid accent color for CTAs
+- No colored side-borders on cards
+- No icon-in-colored-circle gimmicks for feature sections
+- Mobile-first: design at 375px first, then scale up to tablet (768px)
+  and desktop (1280px+)
+
+- Bottom-anchored nav or hamburger menu on mobile
+- Smooth CSS transitions on hover and focus
+- Subtle scroll reveal animations on sections (opacity + translateY only,
+  respecting prefers-reduced-motion)
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+Vercek DEPLOYMENT READINESS
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+The site will be hosted on Vercel.
+
+
