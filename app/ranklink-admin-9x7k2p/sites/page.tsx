@@ -69,7 +69,7 @@ export default async function SitesPage() {
           {!sites || sites.length === 0 ? (
             <div className="py-20 text-center text-gray-400">
               <p className="font-semibold text-lg">No sites yet</p>
-              <p className="text-sm mt-1">Click "Add Site" to get started</p>
+              <p className="text-sm mt-1">Click &quot;Add Site&quot; to get started</p>
             </div>
           ) : (
             <div className="overflow-x-auto">
