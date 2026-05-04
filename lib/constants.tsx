@@ -33,7 +33,7 @@ export const NAV_LINKS: NavLink[] = [
   },
   { name: 'Why Choose Us', href: '/why-choose-us' },
   { name: 'About Us', href: '/about-us' },
-  { name: 'Our Team', href: '/our-team' },
+  { name: 'Team', href: '/our-team' },
   { name: 'FAQ', href: '/faqs' },
   { name: 'Contact Us', href: '/contact-us' },
 ];
@@ -368,25 +368,24 @@ export const SEO_PRICING_PLANS: PricingPlan[] = [
 export const TEAM_MEMBERS: TeamMember[] = [
   {
     name: 'Hafiz Mueen',
-    role: 'CEO & Founder',
-    image: 'https://images.unsplash.com/photo-1560250097-0b93528c311a?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80',
+    role: 'Founder & SEO Strategist',
+    image: '',
     message:
-      'At Rank Link Agency, we believe in the power of authentic connections. Our mission is not just to build links, but to build bridges between brands and their true audience. We strive for excellence in every campaign, ensuring that our clients achieve sustainable growth and real authority in their niche.',
+      'I review Tech, Fashion, and other niche websites, analyze competitors, and identify backlink and keyword gaps. With my team, I prepare clear SEO reports and provide simple, effective strategies and backlink plans to improve Google rankings and online growth.',
     isCeo: true,
   },
   {
-    name: 'David Chen',
-    role: 'Head of SEO',
-    image: 'https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80',
+    name: 'Haroon Ismail',
+    role: 'Content Writer & SEO Analyst',
+    image: '',
+    message:
+      'Haroon Ismail is a professional content writer with strong experience in SEO. He works on keyword gap and backlink analysis, and helps in preparing detailed client reports. He also has pro-level skills in graphic design, making content more effective and visually strong for better results.',
   },
   {
-    name: 'Emily Davis',
-    role: 'Content Strategy Lead',
-    image: 'https://images.unsplash.com/photo-1580489944761-15a19d654956?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80',
-  },
-  {
-    name: 'Michael Wilson',
-    role: 'Outreach Manager',
-    image: 'https://images.unsplash.com/photo-1500648767791-00dcc994a43e?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80',
+    name: 'Muhammad Ahmed',
+    role: 'Marketing & Vendor Relations Executive',
+    image: '',
+    message:
+      'Muhammad Ahmed handles marketing activities, communicates with vendors, and collects data from high-authority websites. He manages outreach and ensures smooth coordination with publishers for effective guest post placements and backlink opportunities.',
   },
 ];
