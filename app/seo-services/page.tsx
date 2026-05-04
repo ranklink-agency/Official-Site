@@ -9,10 +9,11 @@ export const metadata: Metadata = {
   description: 'Full-service SEO management including audit, keyword research, link building, and analytics tracking.',
 };
 
+const NICHE_TAGS = ['Technology', 'Fashion', 'Business', 'Health', 'Travel', 'Home Improvement', 'Lifestyle', 'Education', 'Finance', 'General Blogs'];
+
 export default function SeoServicesPage() {
   return (
     <div className="bg-[#FAFEFA] min-h-screen pb-44">
-      {/* Hero */}
       <div className="relative bg-[#2D2B4A] min-h-[500px] flex flex-col items-center justify-center overflow-hidden px-4 pt-20 pb-32">
         <div className="relative z-10 max-w-7xl mx-auto w-full flex flex-col lg:flex-row items-center gap-16">
           <div className="w-full lg:w-1/2 text-white space-y-6">
@@ -77,7 +78,6 @@ export default function SeoServicesPage() {
         </div>
       </div>
 
-      {/* Main Content */}
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-24">
         <SectionHeading
           tagline="Our Process"
@@ -113,7 +113,27 @@ export default function SeoServicesPage() {
           </div>
         </div>
 
-        {/* Features Grid */}
+        <div className="mb-20">
+          <SectionHeading
+            tagline="Available Niches"
+            title="Choose the niche that matches your brand and audience."
+            description="High-quality guest posting with permanent backlinks and trusted websites for long-term SEO results."
+            className="mb-8"
+          />
+
+          <div className="flex flex-wrap justify-center gap-3">
+            {NICHE_TAGS.map((niche) => (
+              <button
+                key={niche}
+                type="button"
+                className="inline-flex items-center rounded-full bg-white px-4 py-2 text-sm font-semibold text-slate-700 shadow-sm border border-slate-200 hover:border-[#00BCD4] hover:text-[#00BCD4] hover:shadow-md transition-all"
+              >
+                {niche}
+              </button>
+            ))}
+          </div>
+        </div>
+
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 mb-24">
           {SEO_SERVICES_FEATURES.map((feature, index) => (
             <div
@@ -131,20 +151,20 @@ export default function SeoServicesPage() {
           ))}
         </div>
 
-        {/* Pricing */}
-        <div id="pricing">
+        <div id="pricing" className="scroll-mt-24">
           <SectionHeading
             tagline="Pricing"
-            title="Providing brilliant ideas for your business."
+            title="Guest Post Packages (Tech & Fashion)"
+            description="Perfect packages for startups, growing businesses, and premium brands targeting stronger authority and rankings."
             className="mb-16"
           />
-          <div className="flex flex-col lg:flex-row justify-center items-center lg:items-stretch gap-8 max-w-6xl mx-auto">
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
             {SEO_PRICING_PLANS.map((plan, index) => {
               const isPremium = index === 1;
               return (
                 <div
                   key={index}
-                  className={`relative w-full max-w-sm rounded-2xl overflow-hidden transition-all duration-300 flex flex-col ${
+                  className={`relative w-full rounded-2xl overflow-hidden transition-all duration-300 flex flex-col ${
                     isPremium
                       ? 'bg-white shadow-2xl border-2 border-[#FFC107] transform lg:-translate-y-4 z-10'
                       : 'bg-white shadow-lg border border-gray-100'
@@ -162,7 +182,7 @@ export default function SeoServicesPage() {
                       <span className="text-2xl font-bold text-[#00BCD4] mt-2">$</span>
                       <span className="text-6xl font-extrabold text-[#00BCD4]">{plan.price}</span>
                     </div>
-                    <p className="text-gray-400 text-xs font-bold uppercase mt-2">Monthly</p>
+                    <p className="text-gray-400 text-xs font-bold uppercase mt-2">Per Placement</p>
                   </div>
                   <div className="p-8 bg-gray-50/50">
                     <ul className="space-y-4 mb-8 text-left">
