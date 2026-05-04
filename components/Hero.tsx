@@ -13,6 +13,7 @@ export default function Hero() {
             <span className="inline-block bg-brand-yellow text-xs font-bold px-3 py-1 rounded-full text-white uppercase tracking-wider mb-2 animate-fade-in-up">
               #Premium Services
             </span>
+
             <h1
               className="text-4xl md:text-5xl lg:text-6xl font-extrabold text-slate-800 leading-tight animate-fade-in-up"
               style={{ animationDelay: '0.1s' }}
@@ -23,18 +24,55 @@ export default function Hero() {
               <br />
               Backlinks
             </h1>
+
+            <div
+              className="border-l-4 border-[#FFC107] pl-4 animate-fade-in-up"
+              style={{ animationDelay: '0.15s' }}
+            >
+              <p className="text-[#00BCD4] font-extrabold text-lg md:text-xl uppercase tracking-wide">
+                Pure SaaS Niche Guest Posting
+              </p>
+            </div>
+
             <p
-              className="text-lg text-slate-600 max-w-lg animate-fade-in-up"
+              className="text-base md:text-lg text-slate-600 leading-relaxed animate-fade-in-up"
               style={{ animationDelay: '0.2s' }}
             >
-              Boost your business rankings with powerful backlinks!!
+              We provide pure SaaS niche guest posts on{' '}
+              <span className="font-bold text-slate-800">DA/DR 75+ to 80+</span> authority websites
+              with{' '}
+              <span className="font-bold text-slate-800">permanent do-follow backlinks</span>, SEO
+              content, and image inclusion. With strong backlink building, your website or brand can{' '}
+              <span className="font-bold text-cyan-600">rank higher on Google</span>, increase
+              authority, and reach the top in your niche.
             </p>
+
+            <div
+              className="flex flex-wrap gap-2 animate-fade-in-up"
+              style={{ animationDelay: '0.25s' }}
+            >
+              {[
+                'DA/DR 75–80+',
+                'Do-Follow Links',
+                'SEO Content',
+                'Image Inclusion',
+                'Permanent Backlinks',
+              ].map((tag) => (
+                <span
+                  key={tag}
+                  className="bg-white border border-cyan-200 text-cyan-700 text-xs font-bold px-3 py-1.5 rounded-full shadow-sm"
+                >
+                  ✓ {tag}
+                </span>
+              ))}
+            </div>
+
             <Link
               href="/contact-us"
               className="bg-brand-yellow hover:bg-yellow-500 text-white font-bold py-3 px-8 rounded-full shadow-lg transform transition hover:-translate-y-1 active:scale-95 active:shadow-sm inline-flex items-center gap-2 animate-fade-in-up"
               style={{ animationDelay: '0.3s' }}
             >
-              DISCOVER MORE
+              GET STARTED TODAY
             </Link>
           </div>
 
