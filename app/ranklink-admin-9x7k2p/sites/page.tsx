@@ -4,7 +4,7 @@ import { redirect } from 'next/navigation';
 import Sidebar from '@/components/dashboard/Sidebar';
 import Link from 'next/link';
 import Image from 'next/image';
-import { Pencil, Trash2, Plus } from 'lucide-react';
+import { Pencil, Plus } from 'lucide-react';
 import type { PublisherSite } from '@/lib/supabase/types';
 import DeleteSiteButton from '@/components/dashboard/DeleteSiteButton';
 
@@ -14,6 +14,20 @@ const UNIT_LABEL: Record<string, string> = {
   per_day: '/day',
   per_month: '/mo',
   per_year: '/yr',
+};
+
+const LINK_COLOR: Record<string, string> = {
+  dofollow:  'bg-green-100 text-green-700',
+  nofollow:  'bg-red-100 text-red-600',
+  sponsored: 'bg-amber-100 text-amber-700',
+  ugc:       'bg-purple-100 text-purple-700',
+};
+
+const LINK_LABEL: Record<string, string> = {
+  dofollow: 'Do-Follow',
+  nofollow: 'No-Follow',
+  sponsored: 'Sponsored',
+  ugc: 'UGC',
 };
 
 export default async function SitesPage() {
@@ -65,6 +79,7 @@ export default async function SitesPage() {
                     <th className="text-left px-6 py-4 font-semibold text-gray-500 uppercase text-xs tracking-wider">Site</th>
                     <th className="text-left px-6 py-4 font-semibold text-gray-500 uppercase text-xs tracking-wider">DA</th>
                     <th className="text-left px-6 py-4 font-semibold text-gray-500 uppercase text-xs tracking-wider">Traffic</th>
+                    <th className="text-left px-6 py-4 font-semibold text-gray-500 uppercase text-xs tracking-wider">Link Type</th>
                     <th className="text-left px-6 py-4 font-semibold text-gray-500 uppercase text-xs tracking-wider">Price</th>
                     <th className="text-left px-6 py-4 font-semibold text-gray-500 uppercase text-xs tracking-wider">Sale</th>
                     <th className="px-6 py-4"></th>
@@ -75,22 +90,29 @@ export default async function SitesPage() {
                     <tr key={site.id} className="hover:bg-gray-50 transition-colors">
                       <td className="px-6 py-4">
                         <div className="flex items-center gap-3">
-                          <div className="w-10 h-10 rounded-lg border border-gray-100 bg-white flex items-center justify-center overflow-hidden flex-shrink-0 shadow-sm">
+                          <div className="w-10 h-10 rounded-lg border border-gray-100 bg-gray-50 flex items-center justify-center overflow-hidden flex-shrink-0 shadow-sm">
                             {site.logo_url ? (
-                              <Image src={site.logo_url} alt={site.domain} width={40} height={40} className="object-contain w-full h-full" unoptimized />
+                              <Image src={site.logo_url} alt={site.domain} width={40} height={40} className="object-contain w-full h-full p-0.5" unoptimized />
                             ) : (
-                              <span className="text-gray-300 text-xs font-bold">{site.domain?.slice(0,2).toUpperCase()}</span>
+                              <span className="text-gray-400 text-xs font-bold">{site.domain?.slice(0,2).toUpperCase()}</span>
                             )}
                           </div>
                           <div>
                             <p className="font-semibold text-slate-800">{site.domain}</p>
-                            <a href={site.site_url} target="_blank" rel="noopener noreferrer" className="text-xs text-[#00BCD4] hover:underline">{site.site_url}</a>
+                            <a href={site.site_url} target="_blank" rel="noopener noreferrer" className="text-xs text-[#00BCD4] hover:underline truncate max-w-[180px] block">{site.site_url}</a>
                           </div>
                         </div>
                       </td>
                       <td className="px-6 py-4 font-bold text-slate-700">DA {site.da}+</td>
-                      <td className="px-6 py-4 text-gray-600">{site.traffic_value?.toLocaleString()}{UNIT_LABEL[site.traffic_unit]}</td>
+                      <td className="px-6 py-4 text-gray-600 whitespace-nowrap">
+                        {site.traffic}{UNIT_LABEL[site.traffic_unit] ?? ''}
+                      </td>
                       <td className="px-6 py-4">
+                        <span className={`text-xs font-bold px-2 py-0.5 rounded-full ${LINK_COLOR[site.link_type] ?? 'bg-gray-100 text-gray-500'}`}>
+                          {LINK_LABEL[site.link_type] ?? site.link_type}
+                        </span>
+                      </td>
+                      <td className="px-6 py-4 whitespace-nowrap">
                         {site.is_sale && site.original_price && (
                           <span className="text-gray-400 line-through text-xs mr-1">${site.original_price}</span>
                         )}

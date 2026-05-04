@@ -1,16 +1,23 @@
-import { ChevronRight, ShieldCheck, TrendingUp, DollarSign, Globe } from 'lucide-react';
-import Image from 'next/image';
+import { ShieldCheck, TrendingUp, DollarSign, Globe } from 'lucide-react';
 import Link from 'next/link';
 import { createAdminClient } from '@/lib/supabase/admin';
 import { PREMIUM_FAQS } from '@/lib/constants';
 import SectionHeading from '@/components/ui/SectionHeading';
 import PremiumFaqClient from '@/components/PremiumFaqClient';
+import SiteLogo from '@/components/SiteLogo';
 import type { PublisherSite } from '@/lib/supabase/types';
 
 const UNIT_LABEL: Record<string, string> = {
   per_day: '/day',
   per_month: '/mo',
   per_year: '/yr',
+};
+
+const LINK_STYLE: Record<string, { label: string; cls: string }> = {
+  dofollow:  { label: 'Do-Follow',  cls: 'bg-green-100 text-green-700' },
+  nofollow:  { label: 'No-Follow',  cls: 'bg-red-100 text-red-600' },
+  sponsored: { label: 'Sponsored',  cls: 'bg-amber-100 text-amber-700' },
+  ugc:       { label: 'UGC',        cls: 'bg-purple-100 text-purple-700' },
 };
 
 async function getSites(): Promise<PublisherSite[]> {
@@ -20,10 +27,7 @@ async function getSites(): Promise<PublisherSite[]> {
       .from('publisher_sites')
       .select('*')
       .order('created_at', { ascending: false });
-    if (error) {
-      console.error('Supabase error:', error.message);
-      return [];
-    }
+    if (error) { console.error('Supabase error:', error.message); return []; }
     return data ?? [];
   } catch (e) {
     console.error('getSites failed:', e);
@@ -49,7 +53,7 @@ export default async function PremiumSitesPage() {
             <span className="text-[#FFC107] drop-shadow-md">High-Authority Backlinks</span>
           </h1>
           <p className="text-white text-lg md:text-xl max-w-2xl mx-auto font-medium leading-relaxed opacity-95">
-            Access our curated marketplace of premium publishers. Secure do-follow links from sites
+            Access our curated marketplace of premium publishers. Secure backlinks from sites
             with real traffic and high domain authority.
           </p>
           <div className="flex flex-wrap justify-center gap-4 pt-4">
@@ -75,16 +79,14 @@ export default async function PremiumSitesPage() {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 -mt-20 relative z-30">
         {/* Publisher listings */}
         <div className="bg-white rounded-3xl shadow-xl overflow-hidden border border-gray-100 mb-24">
-          <div className="p-8 bg-gray-50 border-b border-gray-200 flex flex-col md:flex-row justify-between items-center gap-6">
-            <div>
-              <h2 className="text-2xl font-bold text-slate-800 flex items-center gap-3">
-                <Globe className="w-7 h-7 text-[#00BCD4]" />
-                Available Publishers
-              </h2>
-              <p className="text-gray-500 text-sm mt-1">
-                {sites.length > 0 ? `Showing ${sites.length} premium sites` : 'Showing top premium sites for guest posting'}
-              </p>
-            </div>
+          <div className="p-8 bg-gray-50 border-b border-gray-200">
+            <h2 className="text-2xl font-bold text-slate-800 flex items-center gap-3">
+              <Globe className="w-7 h-7 text-[#00BCD4]" />
+              Available Publishers
+            </h2>
+            <p className="text-gray-500 text-sm mt-1">
+              {sites.length > 0 ? `${sites.length} premium sites available` : 'Check back soon — we\'re adding premium publishers'}
+            </p>
           </div>
 
           <div className="divide-y divide-gray-100">
@@ -92,51 +94,56 @@ export default async function PremiumSitesPage() {
               <div className="py-20 text-center text-gray-400">
                 <Globe className="w-12 h-12 mx-auto mb-3 opacity-30" />
                 <p className="font-semibold text-lg">No sites listed yet</p>
-                <p className="text-sm mt-1">Check back soon — we're adding premium publishers.</p>
+                <p className="text-sm mt-1">Check back soon — we&apos;re adding premium publishers.</p>
               </div>
             ) : (
-              sites.map((site) => (
-                <div key={site.id} className="p-6 md:p-8 hover:bg-blue-50/30 transition-all duration-300 group">
-                  <div className="flex flex-col md:flex-row items-start md:items-center gap-6">
-                    {/* Logo */}
-                    <div className="w-24 h-16 flex-shrink-0 bg-white rounded-xl border border-gray-200 p-2 flex items-center justify-center shadow-sm group-hover:shadow-md transition-shadow group-hover:border-[#00BCD4]">
-                      {site.logo_url ? (
-                        <Image src={site.logo_url} alt={site.domain} width={96} height={64} className="max-w-full max-h-full object-contain" unoptimized />
-                      ) : (
-                        <span className="text-gray-400 font-bold text-sm">{site.domain?.slice(0, 2).toUpperCase()}</span>
-                      )}
-                    </div>
-                    {/* Info */}
-                    <div className="flex-grow">
-                      <h3 className="text-lg font-bold text-slate-800 group-hover:text-[#00BCD4] transition-colors">
-                        {site.domain}
-                      </h3>
-                      <div className="flex flex-wrap gap-4 mt-2">
-                        <span className="text-xs font-bold text-gray-500">DA {site.da}+</span>
-                        <span className="text-xs font-bold text-gray-500">
-                          Traffic: {site.traffic_value?.toLocaleString()}{UNIT_LABEL[site.traffic_unit] ?? ''}
-                        </span>
-                        <span className="text-xs font-bold text-green-500">Do-Follow</span>
+              sites.map((site) => {
+                const linkStyle = LINK_STYLE[site.link_type] ?? { label: site.link_type, cls: 'bg-gray-100 text-gray-600' };
+                return (
+                  <div key={site.id} className="p-6 md:p-8 hover:bg-blue-50/30 transition-all duration-300 group">
+                    <div className="flex flex-col md:flex-row items-start md:items-center gap-6">
+                      {/* Logo — graceful fallback */}
+                      <div className="w-24 h-16 flex-shrink-0 bg-white rounded-xl border border-gray-200 p-2 flex items-center justify-center shadow-sm group-hover:shadow-md transition-shadow group-hover:border-[#00BCD4] overflow-hidden">
+                        <SiteLogo src={site.logo_url} domain={site.domain} />
                       </div>
-                    </div>
-                    {/* Price */}
-                    <div className="flex items-center gap-4 flex-shrink-0">
-                      {site.is_sale && site.original_price && (
-                        <span className="text-gray-400 line-through text-sm">${site.original_price}</span>
-                      )}
-                      <div className="text-right">
-                        {site.is_sale && (
-                          <span className="text-xs font-bold text-red-500 block">SALE</span>
-                        )}
-                        <span className="text-2xl font-extrabold text-[#00BCD4]">${site.price}</span>
+
+                      {/* Info */}
+                      <div className="flex-grow min-w-0">
+                        <h3 className="text-lg font-bold text-slate-800 group-hover:text-[#00BCD4] transition-colors truncate">
+                          {site.domain}
+                        </h3>
+                        <div className="flex flex-wrap gap-3 mt-2">
+                          <span className="inline-flex items-center gap-1 text-xs font-bold text-gray-500 bg-gray-100 px-2 py-0.5 rounded-full">
+                            DA {site.da}+
+                          </span>
+                          <span className="inline-flex items-center gap-1 text-xs font-bold text-gray-500 bg-gray-100 px-2 py-0.5 rounded-full">
+                            {site.traffic}{UNIT_LABEL[site.traffic_unit] ?? ''}
+                          </span>
+                          <span className={`inline-flex items-center gap-1 text-xs font-bold px-2 py-0.5 rounded-full ${linkStyle.cls}`}>
+                            {linkStyle.label}
+                          </span>
+                        </div>
                       </div>
-                      <Link href="/contact-us" className="inline-block bg-[#FFC107] hover:bg-yellow-500 text-white font-bold py-2.5 px-6 rounded-lg transition-all uppercase text-sm tracking-wider shadow-md hover:shadow-lg transform active:scale-95">
-                        Buy Now
-                      </Link>
+
+                      {/* Price + CTA */}
+                      <div className="flex items-center gap-4 flex-shrink-0">
+                        <div className="text-right">
+                          {site.is_sale && site.original_price && (
+                            <span className="text-gray-400 line-through text-sm block">${site.original_price}</span>
+                          )}
+                          {site.is_sale && (
+                            <span className="text-xs font-bold text-red-500 block leading-none mb-0.5">SALE</span>
+                          )}
+                          <span className="text-2xl font-extrabold text-[#00BCD4]">${site.price}</span>
+                        </div>
+                        <Link href="/contact-us" className="inline-block bg-[#FFC107] hover:bg-yellow-500 text-white font-bold py-2.5 px-6 rounded-lg transition-all uppercase text-sm tracking-wider shadow-md hover:shadow-lg transform active:scale-95 whitespace-nowrap">
+                          Buy Now
+                        </Link>
+                      </div>
                     </div>
                   </div>
-                </div>
-              ))
+                );
+              })
             )}
           </div>
         </div>
