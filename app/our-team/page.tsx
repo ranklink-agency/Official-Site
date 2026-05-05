@@ -19,7 +19,7 @@ const MEMBER_CONFIG: Record<string, {
   stripColor: string;
 }> = {
   'Hafiz Mueen': {
-    avatarUrl: 'https://api.dicebear.com/9.x/notionists/svg?seed=HafizMueen&backgroundColor=b6e8f4&scale=90',
+    avatarUrl: '/ceo-hafiz-mueen.jpeg',
     ringColor: 'ring-[#00BCD4]',
     badgeBg: 'bg-cyan-50',
     badgeText: 'text-[#0097A7]',
