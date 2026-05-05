@@ -13,9 +13,9 @@ export default async function NewSitePage() {
   if (!user) redirect(`${BASE}/login`);
 
   return (
-    <div className="flex min-h-screen bg-[#F0F4F8]">
+    <div className="flex h-full bg-[#F0F4F8]">
       <Sidebar email={user.email!} />
-      <main className="flex-1 p-8 max-w-3xl">
+      <main className="flex-1 overflow-y-auto p-8 max-w-3xl">
         <Link href={`${BASE}/sites`} className="flex items-center gap-1 text-sm text-gray-500 hover:text-[#00BCD4] mb-6 transition-colors">
           <ChevronLeft className="w-4 h-4" /> Back to sites
         </Link>
