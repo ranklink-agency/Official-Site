@@ -31,7 +31,7 @@ export default function Sidebar({ email }: SidebarProps) {
   }
 
   return (
-    <aside className="w-64 bg-[#2D2B4A] min-h-screen flex flex-col flex-shrink-0">
+    <aside className="w-64 bg-[#2D2B4A] h-full flex flex-col flex-shrink-0 overflow-y-auto">
       {/* Logo */}
       <div className="px-6 py-6 border-b border-white/10">
         <span className="text-white font-extrabold text-lg tracking-tight">
