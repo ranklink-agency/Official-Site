@@ -76,7 +76,7 @@ export default function LogoStrip() {
     <div className="bg-white py-10 border-b border-gray-100">
       <div className="max-w-7xl mx-auto px-4">
         <p className="text-sm font-bold text-gray-500 uppercase tracking-widest mb-8 text-center">
-          As Featured On:
+          Trusted SaaS, Tech & Premium Brands We&apos;ve Collaborated With
         </p>
 
         <div className="relative flex items-center gap-2">
