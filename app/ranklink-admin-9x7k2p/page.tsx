@@ -21,9 +21,9 @@ export default async function DashboardPage() {
   const usersCount = usersData?.users?.length ?? 0;
 
   return (
-    <div className="flex h-full bg-[#F0F4F8]">
+    <div className="flex flex-1 overflow-hidden">
       <Sidebar email={user.email!} />
-      <main className="flex-1 overflow-y-auto p-8">
+      <main className="flex-1 overflow-y-auto p-8 bg-[#F0F4F8]">
         <h1 className="text-2xl font-extrabold text-slate-800 mb-1">Overview</h1>
         <p className="text-gray-500 text-sm mb-8">Welcome back, {user.email}</p>
 
