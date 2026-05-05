@@ -20,7 +20,7 @@ export default function PageHeader({ title, subtitle, children }: PageHeaderProp
         )}
         {children}
       </div>
-      <div className="absolute bottom-0 left-0 w-full overflow-hidden leading-none transform rotate-180 z-0">
+      <div className="absolute bottom-0 left-0 w-full overflow-hidden leading-none transform rotate-180 z-0" style={{ marginBottom: '-2px' }}>
         <svg
           className="relative block w-full h-16 md:h-24"
           xmlns="http://www.w3.org/2000/svg"
