@@ -7,7 +7,7 @@ export const metadata: Metadata = {
 
 export default function DashboardLayout({ children }: { children: React.ReactNode }) {
   return (
-    <div className="isolate" style={{ position: 'fixed', inset: 0, zIndex: 9999, overflowY: 'auto', background: '#F0F4F8' }}>
+    <div className="isolate" style={{ position: 'fixed', inset: 0, zIndex: 9999, display: 'flex', overflow: 'hidden', background: '#F0F4F8' }}>
       {children}
     </div>
   );
