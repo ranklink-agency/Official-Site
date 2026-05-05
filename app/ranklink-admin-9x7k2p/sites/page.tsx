@@ -42,9 +42,9 @@ export default async function SitesPage() {
     .order('created_at', { ascending: false });
 
   return (
-    <div className="flex h-full bg-[#F0F4F8]">
+    <div className="flex flex-1 overflow-hidden">
       <Sidebar email={user.email!} />
-      <main className="flex-1 overflow-y-auto p-8">
+      <main className="flex-1 overflow-y-auto p-8 bg-[#F0F4F8]">
         <div className="flex items-center justify-between mb-8">
           <div>
             <h1 className="text-2xl font-extrabold text-slate-800">Publisher Sites</h1>
