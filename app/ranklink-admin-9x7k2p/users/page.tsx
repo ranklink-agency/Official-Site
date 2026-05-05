@@ -16,9 +16,9 @@ export default async function UsersPage() {
   const users = usersData?.users ?? [];
 
   return (
-    <div className="flex min-h-screen bg-[#F0F4F8]">
+    <div className="flex h-full bg-[#F0F4F8]">
       <Sidebar email={user.email!} />
-      <main className="flex-1 p-8">
+      <main className="flex-1 overflow-y-auto p-8">
         <div className="flex items-center gap-3 mb-8">
           <Users className="w-6 h-6 text-purple-500" />
           <div>
