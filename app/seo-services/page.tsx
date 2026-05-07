@@ -2,6 +2,7 @@ import { CheckCircle } from 'lucide-react';
 import Link from 'next/link';
 import { SEO_SERVICES_FEATURES, SEO_PRICING_PLANS } from '@/lib/constants';
 import SectionHeading from '@/components/ui/SectionHeading';
+import SeoContactForm from '@/components/SeoContactForm';
 import type { Metadata } from 'next';
 
 export const metadata: Metadata = {
@@ -42,31 +43,7 @@ export default function SeoServicesPage() {
                   RANK YOUR SITE ON TOP!
                 </h3>
               </div>
-              <form className="space-y-4">
-                <input
-                  type="text"
-                  placeholder="Name"
-                  className="w-full px-4 py-3 bg-gray-50 border border-gray-200 rounded-lg focus:outline-none focus:border-[#4FC3F7] focus:ring-2 focus:ring-cyan-100 text-gray-700 transition-all"
-                />
-                <input
-                  type="email"
-                  placeholder="Email"
-                  className="w-full px-4 py-3 bg-gray-50 border border-gray-200 rounded-lg focus:outline-none focus:border-[#4FC3F7] focus:ring-2 focus:ring-cyan-100 text-gray-700 transition-all"
-                />
-                <input
-                  type="tel"
-                  placeholder="Phone Number"
-                  className="w-full px-4 py-3 bg-gray-50 border border-gray-200 rounded-lg focus:outline-none focus:border-[#4FC3F7] focus:ring-2 focus:ring-cyan-100 text-gray-700 transition-all"
-                />
-                <textarea
-                  placeholder="Message"
-                  rows={4}
-                  className="w-full px-4 py-3 bg-gray-50 border border-gray-200 rounded-lg focus:outline-none focus:border-[#4FC3F7] focus:ring-2 focus:ring-cyan-100 text-gray-700 resize-none transition-all"
-                ></textarea>
-                <button className="w-full bg-[#00BCD4] hover:bg-cyan-600 text-white font-bold py-4 rounded-lg uppercase tracking-wider transition-colors shadow-md hover:shadow-lg">
-                  SEND MESSAGE
-                </button>
-              </form>
+              <SeoContactForm />
             </div>
           </div>
         </div>
