@@ -45,6 +45,15 @@ const MEMBER_CONFIG: Record<string, {
     roleColor: 'text-violet-600',
     stripColor: 'bg-violet-400',
   },
+  'Shanzay Mustafa': {
+    avatarUrl: 'https://api.dicebear.com/9.x/notionists/svg?seed=ShanzayMustafa&backgroundColor=fce7f3&scale=90',
+    ringColor: 'ring-pink-400',
+    badgeBg: 'bg-pink-50',
+    badgeText: 'text-pink-700',
+    badgeBorder: 'border-pink-200',
+    roleColor: 'text-pink-600',
+    stripColor: 'bg-pink-400',
+  },
 };
 
 function Avatar({ url, ring, size = 'md' }: { url: string; ring: string; size?: 'lg' | 'md' }) {
