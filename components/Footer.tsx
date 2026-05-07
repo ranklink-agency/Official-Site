@@ -151,7 +151,7 @@ export default function Footer() {
                 <div>
                   <h4 className="text-xs font-bold text-gray-400 uppercase tracking-wider mb-0.5">Address</h4>
                   <p className="text-gray-700 font-medium text-sm leading-snug group-hover:text-gray-900 transition-colors">
-                    Chnadar Nagar chak no 2, district Nankana sahib
+                    T&amp;T Aabpara Society Lahore Pakistan
                   </p>
                 </div>
               </div>
@@ -216,7 +216,7 @@ export default function Footer() {
         {/* Bottom Bar */}
         <div className="mt-16 pt-8 border-t border-orange-200 flex flex-col md:flex-row justify-between items-center gap-4">
           <p className="text-sm text-gray-500 font-medium">
-            Copyright © 2025 Rank Link Agency. All rights reserved.
+            Copyright © {new Date().getFullYear()} Rank Link Agency. All rights reserved.
           </p>
           <div className="flex gap-3 opacity-80 hover:opacity-100 transition-opacity">
             <div className="h-8 bg-white px-3 border border-gray-200 rounded flex items-center shadow-sm" title="Visa">
