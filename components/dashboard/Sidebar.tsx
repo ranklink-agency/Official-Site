@@ -3,13 +3,14 @@
 import Link from 'next/link';
 import { usePathname, useRouter } from 'next/navigation';
 import { createClient } from '@/lib/supabase/client';
-import { Globe, Users, LogOut, LayoutDashboard } from 'lucide-react';
+import { Globe, Users, LogOut, LayoutDashboard, Mail } from 'lucide-react';
 
 const BASE = '/ranklink-admin-9x7k2p';
 
 const NAV = [
   { href: BASE, label: 'Overview', icon: LayoutDashboard },
   { href: `${BASE}/sites`, label: 'Publisher Sites', icon: Globe },
+  { href: `${BASE}/emails`, label: 'Receive Emails', icon: Mail },
   { href: `${BASE}/users`, label: 'Users', icon: Users },
 ];
 
