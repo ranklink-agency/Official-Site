@@ -15,7 +15,7 @@ const NICHE_TAGS = ['Technology', 'Fashion', 'Business', 'Health', 'Travel', 'Ho
 export default function SeoServicesPage() {
   return (
     <div className="bg-[#FAFEFA] min-h-screen pb-44">
-      <div className="relative bg-[#2D2B4A] min-h-[500px] flex flex-col items-center justify-center overflow-hidden px-4 pt-20 pb-32">
+      <div className="relative bg-[#2D2B4A] min-h-[500px] flex flex-col items-center justify-center overflow-hidden px-4 sm:px-6 lg:px-8 pt-20 pb-32">
         <div className="relative z-10 max-w-7xl mx-auto w-full flex flex-col lg:flex-row items-center gap-16">
           <div className="w-full lg:w-1/2 text-white space-y-6">
             <span className="text-[#FFC107] font-bold uppercase tracking-widest text-sm">
