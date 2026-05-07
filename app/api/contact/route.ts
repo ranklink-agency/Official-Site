@@ -63,7 +63,7 @@ export async function POST(req: NextRequest) {
     const { data, error } = await resend.emails.send({
       from: 'Rank Link Agency <onboarding@resend.dev>',
       to: [TO_EMAIL],
-      reply_to: email,
+      replyTo: email,
       subject: subjectLine,
       html,
     });
