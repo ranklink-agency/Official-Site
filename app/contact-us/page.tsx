@@ -1,6 +1,7 @@
 import { MapPin, Mail, Facebook, Instagram } from 'lucide-react';
 import PageHeader from '@/components/ui/PageHeader';
 import { WhatsAppIcon, FiverrIcon, UpworkIcon, LinkedInIcon } from '@/components/ui/SocialIcons';
+import ContactForm from '@/components/ContactForm';
 import type { Metadata } from 'next';
 
 export const metadata: Metadata = {
@@ -131,72 +132,7 @@ export default function ContactPage() {
           <div className="w-full lg:w-7/12 p-10 lg:p-12 bg-white">
             <h2 className="text-2xl font-bold text-slate-800 mb-1">Send us a message</h2>
             <p className="text-gray-500 text-sm mb-8">Fill out the form below and we will get back to you shortly.</p>
-            <form className="space-y-5">
-              <div className="grid grid-cols-1 md:grid-cols-2 gap-5">
-                <div>
-                  <label className="block text-xs font-bold text-slate-700 mb-1.5 uppercase tracking-wide">
-                    Name <span className="text-red-500">*</span>
-                  </label>
-                  <input
-                    type="text"
-                    placeholder="Your Name"
-                    className="w-full px-4 py-3 rounded-lg bg-gray-50 border border-gray-200 focus:border-[#00BCD4] focus:ring-4 focus:ring-cyan-100/50 outline-none transition-all text-sm"
-                  />
-                </div>
-                <div>
-                  <label className="block text-xs font-bold text-slate-700 mb-1.5 uppercase tracking-wide">Company</label>
-                  <input
-                    type="text"
-                    placeholder="Company Name"
-                    className="w-full px-4 py-3 rounded-lg bg-gray-50 border border-gray-200 focus:border-[#00BCD4] focus:ring-4 focus:ring-cyan-100/50 outline-none transition-all text-sm"
-                  />
-                </div>
-              </div>
-              <div className="grid grid-cols-1 md:grid-cols-2 gap-5">
-                <div>
-                  <label className="block text-xs font-bold text-slate-700 mb-1.5 uppercase tracking-wide">Phone</label>
-                  <input
-                    type="text"
-                    placeholder="Phone Number"
-                    className="w-full px-4 py-3 rounded-lg bg-gray-50 border border-gray-200 focus:border-[#00BCD4] focus:ring-4 focus:ring-cyan-100/50 outline-none transition-all text-sm"
-                  />
-                </div>
-                <div>
-                  <label className="block text-xs font-bold text-slate-700 mb-1.5 uppercase tracking-wide">
-                    Email <span className="text-red-500">*</span>
-                  </label>
-                  <input
-                    type="email"
-                    placeholder="Email Address"
-                    className="w-full px-4 py-3 rounded-lg bg-gray-50 border border-gray-200 focus:border-[#00BCD4] focus:ring-4 focus:ring-cyan-100/50 outline-none transition-all text-sm"
-                  />
-                </div>
-              </div>
-              <div>
-                <label className="block text-xs font-bold text-slate-700 mb-1.5 uppercase tracking-wide">Subject</label>
-                <input
-                  type="text"
-                  placeholder="How can we help?"
-                  className="w-full px-4 py-3 rounded-lg bg-gray-50 border border-gray-200 focus:border-[#00BCD4] focus:ring-4 focus:ring-cyan-100/50 outline-none transition-all text-sm"
-                />
-              </div>
-              <div>
-                <label className="block text-xs font-bold text-slate-700 mb-1.5 uppercase tracking-wide">
-                  Message <span className="text-red-500">*</span>
-                </label>
-                <textarea
-                  rows={4}
-                  placeholder="Write your message here..."
-                  className="w-full px-4 py-3 rounded-lg bg-gray-50 border border-gray-200 focus:border-[#00BCD4] focus:ring-4 focus:ring-cyan-100/50 outline-none transition-all resize-none text-sm"
-                />
-              </div>
-              <button
-                type="submit"
-                className="w-full bg-[#FFC107] hover:bg-yellow-500 text-white font-bold py-4 rounded-lg shadow-lg hover:shadow-xl transition-all transform hover:-translate-y-0.5 active:scale-95 uppercase tracking-wider text-sm"
-              >
-                Send Message
-              </button>
-            </form>
+            <ContactForm />
           </div>
         </div>
 
