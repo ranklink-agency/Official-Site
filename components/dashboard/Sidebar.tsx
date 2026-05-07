@@ -10,7 +10,7 @@ const BASE = '/ranklink-admin-9x7k2p';
 const NAV = [
   { href: BASE, label: 'Overview', icon: LayoutDashboard },
   { href: `${BASE}/sites`, label: 'Publisher Sites', icon: Globe },
-  { href: `${BASE}/emails`, label: 'Receive Emails', icon: Mail },
+  // { href: `${BASE}/emails`, label: 'Receive Emails', icon: Mail }, // hidden — re-enable when feature is ready
   { href: `${BASE}/users`, label: 'Users', icon: Users },
 ];
 
