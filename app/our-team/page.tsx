@@ -46,7 +46,7 @@ const MEMBER_CONFIG: Record<string, {
     stripColor: 'bg-violet-400',
   },
   'Shanzay Mustafa': {
-    avatarUrl: 'https://api.dicebear.com/9.x/notionists/svg?seed=ShanzayMustafa&backgroundColor=fce7f3&scale=90',
+    avatarUrl: '/shanzay-mustafa.jpeg',
     ringColor: 'ring-pink-400',
     badgeBg: 'bg-pink-50',
     badgeText: 'text-pink-700',
