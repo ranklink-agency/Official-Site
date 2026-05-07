@@ -6,7 +6,7 @@ import type { Metadata } from 'next';
 
 export const metadata: Metadata = {
   title: 'About Us | Rank Link Agency',
-  description: 'Learn about Rank Link Agency – your trusted partner in guest post and backlink services since 2017.',
+  description: 'Learn about Rank Link Agency – your trusted partner in guest post and backlink services since 2021.',
 };
 
 export default function AboutPage() {
@@ -30,7 +30,7 @@ export default function AboutPage() {
               <SectionHeading
                 tagline="Who We Are"
                 title="About Rank Link Agency"
-                description="Rank Link Agency Ltd found in 2017 intending to help online businesses with marketing services. Building a brand presence, increasing organic traffic and sales, and boosting your keywords ranking in search engines with our guest post services."
+                description="Rank Link Agency Ltd found in 2021 intending to help online businesses with marketing services. Building a brand presence, increasing organic traffic and sales, and boosting your keywords ranking in search engines with our guest post services."
                 alignment="left"
                 className="mb-8"
               />
