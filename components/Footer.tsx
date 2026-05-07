@@ -108,10 +108,10 @@ export default function Footer() {
             </h3>
             <ul className="space-y-3">
               {[
-                { name: "Privacy Policy", href: "#" },
-                { name: "Terms of Service", href: "#" },
-                { name: "Refund Policy", href: "#" },
-                { name: "Delivery Policy", href: "#" },
+                { name: "Privacy Policy", href: "/privacy-policy" },
+                { name: "Terms of Service", href: "/terms-of-service" },
+                { name: "Refund Policy", href: "/refund-policy" },
+                { name: "Delivery Policy", href: "/delivery-policy" },
                 { name: "Contact Us", href: "/contact-us" },
               ].map((item) => (
                 <li key={item.name}>
