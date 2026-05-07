@@ -3,5 +3,11 @@
   "buildCommand": "next build",
   "outputDirectory": ".next",
   "installCommand": "npm install",
-  "devCommand": "next dev -p 5000"
+  "devCommand": "next dev -p 5000",
+  "crons": [
+    {
+      "path": "/api/cron/health",
+      "schedule": "0 0 */2 * *"
+    }
+  ]
 }
