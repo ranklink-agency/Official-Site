@@ -1,65 +1,94 @@
+import Link from 'next/link';
+import { Star, CheckCircle } from 'lucide-react';
+import { REVIEWS } from '@/lib/constants';
 import Image from 'next/image';
-import { Star, Quote } from 'lucide-react';
-import { TESTIMONIAL } from '@/lib/constants';
+
+function StarRow({ rating }: { rating: number }) {
+  return (
+    <div className="flex gap-0.5">
+      {[1, 2, 3, 4, 5].map((i) => (
+        <Star
+          key={i}
+          className={`w-4 h-4 ${i <= rating ? 'text-brand-yellow fill-current' : 'text-gray-200 fill-current'}`}
+        />
+      ))}
+    </div>
+  );
+}
 
 export default function Testimonials() {
+  const featured = REVIEWS.slice(0, 3);
+
   return (
-    <section className="py-24 bg-white">
+    <section className="py-24 bg-[#FAFEFA]">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="flex flex-col md:flex-row items-center justify-between">
-          <div className="w-full md:w-1/2 mb-10 md:mb-0 pr-0 md:pr-10">
-            <span className="text-cyan-500 font-bold uppercase tracking-wider text-sm mb-4 block">
-              Testimonial
-            </span>
-            <p className="text-gray-600 mb-8">
-              We&apos;ve helped hundreds of brands grow their online presence through powerful guest
-              posts and press releases. Here&apos;s what our happy clients have to say:
-            </p>
-            <div className="bg-white rounded-2xl shadow-xl p-8 border border-gray-100 relative">
-              <div className="absolute top-0 left-1/2 transform -translate-x-1/2 -translate-y-1/2 bg-gray-200 rounded-full p-3">
-                <Quote className="w-6 h-6 text-gray-400 fill-current" />
-              </div>
-              <p className="text-gray-700 italic text-center mb-6 pt-4">{TESTIMONIAL.text}</p>
-              <div className="flex justify-center gap-1 mb-4">
-                {[1, 2, 3, 4, 5].map((i) => (
-                  <Star key={i} className="w-4 h-4 text-yellow-400 fill-current" />
-                ))}
-              </div>
-              <div className="text-center">
-                <h4 className="font-bold text-slate-900">{TESTIMONIAL.name}</h4>
-                <p className="text-xs text-gray-500">{TESTIMONIAL.role}</p>
-                <div className="flex justify-center mt-3 gap-1">
-                  {[1, 2, 3, 4].map((i) => (
-                    <div
-                      key={i}
-                      className={`h-2 w-2 rounded-full ${i === 2 ? 'bg-slate-800' : 'bg-gray-300'}`}
-                    ></div>
-                  ))}
+        <div className="text-center mb-14">
+          <span className="text-brand-cyan font-bold uppercase tracking-wider text-sm mb-3 block">
+            Client Reviews
+          </span>
+          <h2 className="text-3xl md:text-4xl font-extrabold text-slate-800 mb-4">
+            What Our Clients Say
+          </h2>
+          <p className="text-gray-500 max-w-xl mx-auto text-sm leading-relaxed">
+            We&apos;ve helped hundreds of brands grow their online presence through powerful guest
+            posts and premium backlinks. Here&apos;s what they have to say.
+          </p>
+          <div className="flex items-center justify-center gap-2 mt-4">
+            <div className="flex gap-0.5">
+              {[1,2,3,4,5].map(i => (
+                <Star key={i} className={`w-5 h-5 ${i <= 5 ? 'text-brand-yellow fill-current' : 'text-gray-200 fill-current'}`} />
+              ))}
+            </div>
+            <span className="text-slate-700 font-bold text-sm">4.9/5</span>
+            <span className="text-gray-400 text-sm">based on client satisfaction</span>
+          </div>
+        </div>
+
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+          {featured.map((review) => (
+            <div
+              key={review.id}
+              className="bg-white rounded-2xl shadow-sm border border-gray-100 p-6 flex flex-col gap-4 hover:shadow-md transition-shadow"
+            >
+              <div className="flex items-center gap-3">
+                <div className="w-12 h-12 rounded-full overflow-hidden border-2 border-brand-cyan/20 flex-shrink-0">
+                  <Image
+                    src={review.avatar}
+                    alt={review.name}
+                    width={48}
+                    height={48}
+                    className="w-full h-full object-cover"
+                    unoptimized
+                  />
+                </div>
+                <div>
+                  <p className="font-bold text-slate-800 text-sm leading-tight">{review.name}</p>
+                  <div className="flex items-center gap-1 mt-0.5">
+                    {review.verified && (
+                      <span className="flex items-center gap-1 text-xs text-brand-cyan font-semibold">
+                        <CheckCircle className="w-3 h-3" /> Verified Client
+                      </span>
+                    )}
+                    <div className="flex gap-0.5 ml-1">
+                      <StarRow rating={review.rating} />
+                    </div>
+                  </div>
                 </div>
               </div>
+              <p className="text-gray-600 text-sm leading-relaxed flex-1">{review.text}</p>
+              <p className="text-xs text-gray-400">{review.role}</p>
             </div>
-          </div>
+          ))}
+        </div>
 
-          <div className="w-full md:w-1/2 relative flex justify-center overflow-hidden">
-            <svg
-              viewBox="0 0 200 200"
-              xmlns="http://www.w3.org/2000/svg"
-              className="absolute w-full h-full text-brand-yellow fill-current opacity-90 z-0 top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2"
-            >
-              <path
-                d="M44.7,-76.4C58.9,-69.2,71.8,-59.1,79.6,-46.9C87.4,-34.7,90.1,-20.4,87.9,-6.6C85.7,7.2,78.6,20.5,70,32.3C61.4,44.1,51.3,54.4,39.6,62.8C27.9,71.2,14.6,77.7,0.5,76.8C-13.6,75.9,-27.2,67.6,-39.9,59.3C-52.6,51,-64.4,42.7,-73.1,31.7C-81.8,20.7,-87.4,7,-85.4,-5.8C-83.4,-18.6,-73.8,-30.5,-63.4,-40.4C-53,-50.3,-41.8,-58.2,-29.9,-66.9C-18,-75.6,-5.4,-85.1,6,-95.5L17.4,-105.9"
-                transform="translate(100 100)"
-              />
-            </svg>
-            <Image
-              src="https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80"
-              alt="Happy client"
-              width={400}
-              height={480}
-              className="relative z-10 w-full max-w-sm rounded-b-full object-cover"
-              style={{ clipPath: 'polygon(0 0, 100% 0, 100% 85%, 50% 100%, 0 85%)' }}
-            />
-          </div>
+        <div className="flex justify-center mt-10">
+          <Link
+            href="/reviews"
+            className="inline-flex items-center gap-2 bg-[#2D2B4A] hover:bg-[#1e1c35] text-white font-bold px-8 py-4 rounded-xl shadow-lg hover:shadow-xl transition-all transform hover:-translate-y-0.5 text-sm uppercase tracking-wider"
+          >
+            See All Reviews
+            <Star className="w-4 h-4 text-brand-yellow fill-current" />
+          </Link>
         </div>
       </div>
     </section>
