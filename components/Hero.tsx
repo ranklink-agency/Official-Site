@@ -1,7 +1,35 @@
+'use client';
+
+import { useState, useEffect } from 'react';
 import Image from 'next/image';
 import Link from 'next/link';
 
+const HERO_IMAGES = [
+  {
+    src: 'https://images.unsplash.com/photo-1556155092-490a1ba16284?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80',
+    alt: 'SEO guest posting dashboard',
+  },
+  {
+    src: 'https://res.cloudinary.com/demq5un47/image/upload/v1778362703/stephen-phillips-hostreviews-co-uk-shr_Xn8S8QU-unsplash_rfca12.jpg',
+    alt: 'Professional work environment',
+  },
+];
+
+const INTERVALS = [3000, 4000, 5000];
+
 export default function Hero() {
+  const [active, setActive] = useState(0);
+  const [intervalIdx, setIntervalIdx] = useState(0);
+
+  useEffect(() => {
+    const delay = INTERVALS[intervalIdx % INTERVALS.length];
+    const timer = setTimeout(() => {
+      setActive((prev) => (prev + 1) % HERO_IMAGES.length);
+      setIntervalIdx((prev) => prev + 1);
+    }, delay);
+    return () => clearTimeout(timer);
+  }, [active, intervalIdx]);
+
   return (
     <div className="relative bg-[#E0F7FA] overflow-hidden pt-12 pb-32 md:pt-24 md:pb-48">
       <div className="absolute top-0 right-0 w-1/2 h-full bg-[#B2EBF2] rounded-bl-[200px] -z-10 opacity-50" />
@@ -49,15 +77,28 @@ export default function Hero() {
           >
             <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-[350px] h-[350px] md:w-[500px] md:h-[500px] bg-brand-yellow rounded-full z-0 opacity-90 transition-transform duration-700 hover:scale-105" />
 
-            <Image
-              src="https://images.unsplash.com/photo-1556155092-490a1ba16284?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80"
-              alt="SEO guest posting"
-              width={500}
-              height={500}
-              className="relative z-10 w-[320px] md:w-full md:max-w-md object-contain transition-transform duration-500 hover:scale-[1.02]"
-              style={{ maskImage: 'linear-gradient(black 85%, transparent 100%)' }}
-              priority
-            />
+            <div className="relative z-10 w-[320px] md:w-full md:max-w-md" style={{ aspectRatio: '1 / 1' }}>
+              {HERO_IMAGES.map((img, idx) => (
+                <Image
+                  key={img.src}
+                  src={img.src}
+                  alt={img.alt}
+                  fill
+                  className="object-contain"
+                  style={{
+                    maskImage: 'linear-gradient(black 85%, transparent 100%)',
+                    WebkitMaskImage: 'linear-gradient(black 85%, transparent 100%)',
+                    opacity: active === idx ? 1 : 0,
+                    transition: 'opacity 1.2s ease-in-out',
+                    position: 'absolute',
+                    top: 0,
+                    left: 0,
+                  }}
+                  priority={idx === 0}
+                  unoptimized
+                />
+              ))}
+            </div>
 
             <div
               className="absolute top-0 left-4 md:-left-4 bg-white p-3 rounded-xl shadow-lg flex items-center gap-3 z-20 animate-bounce cursor-default"
