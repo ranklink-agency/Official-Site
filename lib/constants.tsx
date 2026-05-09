@@ -19,6 +19,7 @@ import type {
   NavLink,
   PremiumSite,
   TeamMember,
+  Review,
 } from '@/types';
 
 export const NAV_LINKS: NavLink[] = [
@@ -31,9 +32,10 @@ export const NAV_LINKS: NavLink[] = [
       { name: 'SEO Services', href: '/seo-services' },
     ],
   },
-  { name: 'Why Choose Us', href: '/why-choose-us' },
+  // { name: 'Why Choose Us', href: '/why-choose-us' },  // Removed from nav — page still exists at /why-choose-us (line 34 of lib/constants.tsx)
   { name: 'About Us', href: '/about-us' },
   { name: 'Team', href: '/our-team' },
+  { name: 'Reviews', href: '/reviews' },
   { name: 'FAQ', href: '/faqs' },
   { name: 'Contact Us', href: '/contact-us' },
 ];
@@ -260,6 +262,110 @@ export const TESTIMONIAL: Testimonial = {
   role: 'Digital Marketer',
   image: 'https://picsum.photos/seed/anita/200/200',
 };
+
+/**
+ * REVIEWS — Client review cards shown on /reviews and home page testimonials.
+ *
+ * HOW TO ADD A NEW REVIEW IN THE FUTURE:
+ * 1. Copy one of the objects below and paste it at the end of the array.
+ * 2. Increment the `id` by 1 from the last entry.
+ * 3. Fill in:
+ *    - `name`    : Full name of the client
+ *    - `role`    : Their job title / business type (e.g. "E-commerce Owner")
+ *    - `avatar`  : Any image URL. For a quick auto-avatar use:
+ *                  `https://api.dicebear.com/7.x/thumbs/svg?seed=ANYWORD`
+ *                  Replace ANYWORD with any unique word to get a unique avatar.
+ *                  Or use a real photo URL.
+ *    - `rating`  : Number from 1 to 5
+ *    - `text`    : The review text (what the client said)
+ *    - `verified`: Set to `true` for the "Verified Client" badge, `false` to hide it
+ *
+ * The FIRST 3 reviews in this array are shown on the HOME PAGE.
+ * All reviews are shown on the /reviews page.
+ */
+export const REVIEWS: Review[] = [
+  {
+    id: 1,
+    name: 'Daniel Carter',
+    role: 'Digital Marketer',
+    avatar: 'https://api.dicebear.com/7.x/thumbs/svg?seed=DanielCarter',
+    rating: 5,
+    text: 'Rank Link Agency delivered excellent SEO improvements for my business website. I noticed better rankings, stronger visibility, and more organic traffic within a short time.',
+    verified: true,
+  },
+  {
+    id: 2,
+    name: 'Sophia Walker',
+    role: 'E-commerce Store Owner',
+    avatar: 'https://api.dicebear.com/7.x/thumbs/svg?seed=SophiaWalker',
+    rating: 5,
+    text: 'Very professional service. The guest posting and backlink strategy was clean, effective, and helped improve my website authority significantly.',
+    verified: true,
+  },
+  {
+    id: 3,
+    name: 'Michael Adams',
+    role: 'Blogger & Content Creator',
+    avatar: 'https://api.dicebear.com/7.x/thumbs/svg?seed=MichaelAdams',
+    rating: 4,
+    text: 'Great communication and solid SEO knowledge. My website started performing better in search results and the work was delivered on time.',
+    verified: true,
+  },
+  {
+    id: 4,
+    name: 'Ahmed Raza',
+    role: 'Tech Startup Founder',
+    avatar: 'https://api.dicebear.com/7.x/thumbs/svg?seed=AhmedRaza',
+    rating: 5,
+    text: 'Bohat achi SEO service mili. Website ranking improve hui, backlinks quality wale thay, aur overall kaam professional tareeqe se complete hua.',
+    verified: true,
+  },
+  {
+    id: 5,
+    name: 'Ayesha Khan',
+    role: 'Academic Writer',
+    avatar: 'https://api.dicebear.com/7.x/thumbs/svg?seed=AyeshaKhan',
+    rating: 5,
+    text: 'Content writing aur off-page SEO dono bohat ache thay. Work smooth raha aur results ne meri expectations ko exceed kiya. Highly recommended.',
+    verified: true,
+  },
+  {
+    id: 6,
+    name: 'James Thornton',
+    role: 'SaaS Product Manager',
+    avatar: 'https://api.dicebear.com/7.x/thumbs/svg?seed=JamesThornton',
+    rating: 5,
+    text: 'The team at Rank Link Agency took time to understand our niche before placing links. Every guest post felt natural and the DA of the sites was genuinely high.',
+    verified: true,
+  },
+  {
+    id: 7,
+    name: 'Fatima Noor',
+    role: 'Health & Wellness Blogger',
+    avatar: 'https://api.dicebear.com/7.x/thumbs/svg?seed=FatimaNoor',
+    rating: 4,
+    text: 'Mujhe apni health blog ke liye niche-relevant backlinks chahiye thay. Rank Link ne bilkul sahi websites par guest posts karwaye. Traffic mein noticeable improvement aaya.',
+    verified: true,
+  },
+  {
+    id: 8,
+    name: 'Lucas Bennett',
+    role: 'Local Business Owner',
+    avatar: 'https://api.dicebear.com/7.x/thumbs/svg?seed=LucasBennett',
+    rating: 5,
+    text: 'I was skeptical about link building at first, but the results spoke for themselves. My local business now ranks on the first page for our main keywords.',
+    verified: true,
+  },
+  {
+    id: 9,
+    name: 'Sarah Mitchell',
+    role: 'Freelance SEO Consultant',
+    avatar: 'https://api.dicebear.com/7.x/thumbs/svg?seed=SarahMitchell',
+    rating: 5,
+    text: 'I refer all my clients to Rank Link Agency for their link building needs. Consistent quality, transparent reporting, and always on time. A trusted partner.',
+    verified: true,
+  },
+];
 
 export const PREMIUM_SITES: PremiumSite[] = [
   { id: 1, domain: 'kahawatungu.com', image: 'https://via.placeholder.com/300x200?text=Kahawatungu', price: 80.0, originalPrice: 100.0, isSale: true },
