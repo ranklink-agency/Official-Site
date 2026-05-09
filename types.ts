@@ -56,3 +56,13 @@ export interface TeamMember {
   message?: string;
   isCeo?: boolean;
 }
+
+export interface Review {
+  id: number;
+  name: string;
+  role: string;
+  avatar: string;
+  rating: number;
+  text: string;
+  verified: boolean;
+}
