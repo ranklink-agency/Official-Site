@@ -28,7 +28,7 @@ const MEMBER_CONFIG: Record<string, {
     stripColor: 'from-[#00BCD4] via-[#4FC3F7] to-[#FFC107]',
   },
   'Haroon Ismail': {
-    avatarUrl: 'https://api.dicebear.com/9.x/notionists/svg?seed=HaroonIsmail&backgroundColor=fef3c7&scale=90',
+    avatarUrl: '/haroon-ismail.png',
     ringColor: 'ring-amber-400',
     badgeBg: 'bg-amber-50',
     badgeText: 'text-amber-700',
@@ -37,7 +37,7 @@ const MEMBER_CONFIG: Record<string, {
     stripColor: 'bg-amber-400',
   },
   'Muhammad Ahmed': {
-    avatarUrl: 'https://api.dicebear.com/9.x/notionists/svg?seed=MuhammadAhmed&backgroundColor=ede9fe&scale=90',
+    avatarUrl: '/muhammad-ahmed.png',
     ringColor: 'ring-violet-400',
     badgeBg: 'bg-violet-50',
     badgeText: 'text-violet-700',
